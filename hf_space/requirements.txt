@@ -1,0 +1,2 @@
+arabnamer>=0.1.2
+gradio>=4.0

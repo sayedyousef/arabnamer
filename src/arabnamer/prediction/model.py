@@ -22,7 +22,7 @@ import xgboost as xgb
 
 from .featurize import PAD_LEN, featurize_word
 
-HF_REPO_ID = "sayedyousef/arabnamer-xgboost"
+HF_REPO_ID = "Sayedyousef/arabnamer-xgboost"
 MODEL_FILENAME = "xgb_pruned_386r.ubj.gz"          # gzipped, shipped in wheel
 MODEL_FILENAME_FALLBACK = "xgb_pruned_386r.ubj"    # uncompressed, dev-only
 LABELS_FILENAME = "labels.json"
