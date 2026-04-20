@@ -22,7 +22,7 @@ from __future__ import annotations
 from .core import Transliterator, Result
 from .scoring import fuzzy_match, normalize_arabic
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 __all__ = [
     "translit", "translit_batch", "similarity",
     "Transliterator", "Result",
