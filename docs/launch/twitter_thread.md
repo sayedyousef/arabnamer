@@ -36,12 +36,12 @@ Copy tweet-by-tweet. Replace `@user` placeholders if tagging is appropriate.
 
 ---
 
-**4/7** Numbers from a 25-name MENA benchmark:
+**4/7** Numbers from a 25-name benchmark (common Arab first + last combinations):
 
-Avg lenient accuracy: **98.4**
+Avg lenient accuracy: **98.0**
 Pass rate ≥ 70: **25/25**
-Pass rate ≥ 90: **24/25**
-Exact match: **21/25**
+Pass rate ≥ 90: **23/25**
+Exact match: **20/25**
 
 Benchmark + per-name CSV: https://github.com/sayedyousef/arabnamer/blob/main/benchmarks/REPORT.md
 

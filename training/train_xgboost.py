@@ -52,19 +52,19 @@ MERGE_ARTICLES = {"al", "el", "ul", "ed", "ad", "abd", "abdul", "abdel", "abdal"
                   "bin", "ben", "ibn", "binn", "benn"}
 
 TESTS = [
-    ("Sayed Ali","سيد علي"),("Mohammed Ali","محمد علي"),
-    ("Muhammad Ali","محمد علي"),("Ahmad Hassan","أحمد حسن"),
-    ("Marwa Farag","مروة فرج"),("Bassel Salloukh","باسل صلوخ"),
-    ("Nael Jebril","نائل جبريل"),("Ayman El Desouky","أيمن الدسوقي"),
-    ("Issam Nassar","عصام نصار"),("Elizabeth Kassab","إليزابيث قصاب"),
-    ("Natalie Tayim","ناتالي تيم"),("Ismail Nashef","إسماعيل ناشف"),
-    ("Ayhab Saad","إيهاب سعد"),("Julia Barbar","جوليا بربر"),
-    ("Rabia Naguib","ربيعة نجيب"),("Hosam Haffz","حسام حافظ"),
-    ("Diala Hawi","ديالا حاوي"),("Mahdi Arar","مهدي عرعر"),
-    ("Adham Saouli","أدهم ساولي"),("Tariq Da'na","طارق دعنا"),
-    ("Ferdoos Alissa","فردوس العيسى"),("Moataz El Fegiry","معتز الفجيري"),
-    ("Elias Khalil","الياس خليل"),("Basim Tweissi","باسم الطويسي"),
-    ("Abdennour Benantar","عبد النور بن عنتر"),
+    ("Mohammed Ali","محمد علي"),("Ahmad Hassan","أحمد حسن"),
+    ("Omar Khalil","عمر خليل"),("Fatima Mansour","فاطمة منصور"),
+    ("Samir Ibrahim","سمير إبراهيم"),("Layla Al Saleh","ليلى الصالح"),
+    ("Khalid El Masri","خالد المصري"),("Noor Rashid","نور راشد"),
+    ("Yasmin Farouk","ياسمين فاروق"),("Hasan El Amin","حسن الأمين"),
+    ("Karim Shawqi","كريم شوقي"),("Zaynab Nasser","زينب ناصر"),
+    ("Bilal Othman","بلال عثمان"),("Salma Dahlan","سلمى دحلان"),
+    ("Rania Hakim","رانيا حكيم"),("Tamer Abdel Rahim","تامر عبد الرحيم"),
+    ("Mariam Habib","مريم حبيب"),("Hassan El Khatib","حسن الخطيب"),
+    ("Nada Ramzi","ندى رمزي"),("Abdelrahman Saber","عبد الرحمن صابر"),
+    ("Tariq Salama","طارق سلامة"),("Reem Abdul Karim","ريم عبد الكريم"),
+    ("Adam Ayoub","آدم أيوب"),("Ghadeer Anwar","غدير أنور"),
+    ("Mostafa Al Khatib","مصطفى الخطيب"),
 ]
 
 EN_AR_COMPAT = {

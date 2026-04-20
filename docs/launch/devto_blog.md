@@ -23,7 +23,7 @@ open-source library extracted from my MSc thesis work.
 from arabnamer import translit, similarity
 
 translit("Mohammed Ali").arabic        # → 'محمد علي'
-translit("Ayman El Desouky").arabic    # → 'أيمن الدسوقي'
+translit("Layla Al Saleh").arabic      # → 'ليلى الصالح'
 
 similarity("أحمد حسن", "احمد حسن")      # → (True, 100)
 ```

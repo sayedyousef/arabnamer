@@ -123,7 +123,7 @@ SINGLE = {
 # Start-of-word DIGRAPHS checked BEFORE single-vowel rules.
 # Arab-name convention: vowel at start usually takes a hamza'd alef (أ / إ).
 #   Ah- -> أح (Ahmad -> أحمد, Ahmed -> أحمد)
-#   Ay- -> أي (Ayman -> أيمن, Ayhab -> إيهاب)
+#   Ay- -> أي (leading 'ay' prefix maps to hamza-alef + yaa)
 #   Ih- -> إي (Ihsan, Ibrahim-style)
 #   Is- -> إس (Ismail -> إسماعيل)  [short-i at start often gets kasra/إ]
 #   Om- -> عم (Omar -> عمر; 'O' at start of Arab names often = ع)
@@ -381,7 +381,7 @@ def _translit_word(word: str) -> str:
         #   "Mohammed" = M-o-h-a-m-m-e-d -> drop o/a/e -> محمد (approx)
         #   "Hassan"   = H-a-s-s-a-n     -> drop a's -> حسن (approx)
         # 'i' is NOT in this set — it usually represents the long 'ee' sound in
-        # Arabic names ("Jebril" -> جبريل, keep the ي). Digraph 'ee' handled earlier.
+        # Arabic names (middle-position 'i' keeps its ي). Digraph 'ee' handled earlier.
         VOWELS_DROP = {"a", "u", "o"}
         if (
             ch in VOWELS_DROP
@@ -410,8 +410,8 @@ def _translit_word(word: str) -> str:
 
 
 # Article words that in Arab-name convention attach to the following token:
-#   "Ayman El Desouky" -> "Ayman El-Desouky" -> "أيمن الدسوقي"
-#   "Basim El Tweissi" -> "Basim El-Tweissi" -> "باسم الطويسي"
+#   "Layla Al Saleh" -> "Layla Al-Saleh" -> "ليلى الصالح"
+#   "Karim El Masri" -> "Karim El-Masri" -> "كريم المصري"
 ARTICLE_TOKENS = {"el", "al", "ul", "ed", "ad"}
 
 
@@ -446,12 +446,12 @@ def transliterate_name(name_en: str) -> str:
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
     examples = [
-        "Sayed Ali",
         "Mohammed Ali",
         "Ahmad Hassan",
-        "Marwa Farag",
-        "Ayman El Desouky",
-        "Abdennour Benantar",
+        "Fatima Mansour",
+        "Layla Al Saleh",
+        "Samir Ibrahim",
+        "Abdelrahman Saber",
     ]
     import sys
     sys.stdout.reconfigure(encoding="utf-8")

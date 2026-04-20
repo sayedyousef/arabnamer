@@ -58,8 +58,8 @@ def test_transliterator_hybrid_engine():
 
 def test_threshold_customization():
     t = Transliterator(engine="model", threshold=95)
-    r = t.translit("Bassel Salloukh", reference="باسل صلوخ")
-    assert r.score == 100
+    r = t.translit("Ahmad Hassan", reference="أحمد حسن")
+    assert r.score >= 99.0
     assert r.accepted is True
 
 

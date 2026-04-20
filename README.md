@@ -12,7 +12,7 @@
 from arabnamer import translit, similarity
 
 translit("Mohammed Ali").arabic        # → 'محمد علي'
-translit("Ayman El Desouky").arabic    # → 'أيمن الدسوقي'
+translit("Layla Al Saleh").arabic      # → 'ليلى الصالح'
 
 similarity("أحمد حسن", "احمد حسن")      # → (True, 100)
 ```
@@ -41,7 +41,7 @@ run anywhere — including air-gapped environments. The 38 MB pruned XGBoost mod
 | Per-call cost | metered | zero |
 | Works in air-gapped / on-prem | ❌ no | ✅ yes |
 | Model audit / replacement | ❌ opaque | ✅ open weights + retrainable |
-| Accuracy (25-name MENA benchmark) | varies by model | **98.4 avg, 24/25 pass ≥ 90** |
+| Accuracy (25-name MENA benchmark) | varies by model | **98.0 avg, 23/25 pass ≥ 90** |
 
 Built for: **KYC / sanctions screening**, **compliance-gated entity resolution**,
 **library & archive cataloguing**, **Arabic NLP preprocessing**, **on-premise search
@@ -72,7 +72,7 @@ print(result.score)     # 0.0 (no reference supplied)
 print(result.engine)    # 'xgboost'
 
 # batch
-results = translit_batch(["Ahmad Hassan", "Marwa Farag", "Ayman El Desouky"])
+results = translit_batch(["Ahmad Hassan", "Fatima Mansour", "Layla Al Saleh"])
 for r in results:
     print(f"{r.input:<25} -> {r.arabic}")
 ```
@@ -82,7 +82,7 @@ for r in results:
 ```python
 from arabnamer import translit
 
-r = translit("Adham Saouli", reference="أدهم ساولي")
+r = translit("Ahmad Hassan", reference="أحمد حسن")
 print(r.score)       # 100.0
 print(r.accepted)    # True  (>= default threshold 85)
 ```
@@ -117,14 +117,14 @@ t_hybrid = Transliterator(engine="hybrid")
 
 ## How accurate is it?
 
-Benchmarked on 25 MENA-region names (authors, journalists, public figures):
+Benchmarked on 25 generic Arab-name pairs (common first + last combinations covering compound articles, hamza variants, feminine endings):
 
 | Metric | Score |
 |---|---|
-| Average lenient similarity | **98.4** |
+| Average lenient similarity | **98.0** |
 | Pass rate (≥ 70) | **25 / 25** |
-| Pass rate (≥ 90) | **24 / 25** |
-| Exact match (= 100) | **21 / 25** |
+| Pass rate (≥ 90) | **23 / 25** |
+| Exact match (= 100) | **20 / 25** |
 
 Model: XGBoost, 386 boosting rounds × 335 output classes, 34 input features per character
 (char IDs + position + phonetic class + bigram/trigram IDs). See [`benchmarks/REPORT.md`](benchmarks/REPORT.md)

@@ -61,12 +61,12 @@ runtime. This HF page exists for discoverability and the inference widget.
 
 | Metric | Value |
 |---|---|
-| Average lenient similarity | **98.4** |
+| Average lenient similarity | **98.0** |
 | Pass rate ≥ 70 | 25 / 25 |
-| Pass rate ≥ 90 | 24 / 25 |
-| Exact match (= 100) | 21 / 25 |
+| Pass rate ≥ 90 | 23 / 25 |
+| Exact match (= 100) | 20 / 25 |
 
-Benchmark: 25 MENA-region names. Scoring is lenient (tashkeel stripped, hamza/taa-marbuta/alef-maksura unified, then `max(fuzz.ratio, fuzz.partial_ratio)`).
+Benchmark: 25 generic Arab-name pairs (common first + last combinations covering compound articles, hamza variants, feminine endings). Scoring is lenient (tashkeel stripped, hamza/taa-marbuta/alef-maksura unified, then `max(fuzz.ratio, fuzz.partial_ratio)`).
 
 Per-name results: [benchmarks/REPORT.md](https://github.com/sayedyousef/arabnamer/blob/main/benchmarks/REPORT.md)
 

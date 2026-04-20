@@ -171,10 +171,10 @@ pip install arabnamer
         gr.Examples(
             examples=[
                 ["Mohammed Ali", "model (XGBoost)", "محمد علي", 85],
-                ["Ayman El Desouky", "model (XGBoost)", "أيمن الدسوقي", 85],
-                ["Ahmad Hassan", "hybrid", "أحمد حسن", 90],
-                ["Tariq Da'na", "model (XGBoost)", "طارق دعنا", 85],
-                ["Abdennour Benantar", "rules (deterministic)", "", 85],
+                ["Omar Hassan", "hybrid", "عمر حسن", 85],
+                ["Fatima Mansour", "model (XGBoost)", "فاطمة منصور", 85],
+                ["Samir Khalil", "rules (deterministic)", "", 85],
+                ["Layla Al Saleh", "hybrid", "ليلى الصالح", 85],
             ],
             inputs=[name_in, engine_pick, ref_in, thresh_t],
         )
@@ -223,7 +223,7 @@ pip install arabnamer
             with gr.Column():
                 batch_in = gr.Textbox(
                     label="English names (one per line)",
-                    placeholder="Mohammed Ali\nAhmad Hassan\nMarwa Farag",
+                    placeholder="Mohammed Ali\nAhmad Hassan\nFatima Mansour",
                     lines=10,
                 )
                 batch_engine = gr.Radio(

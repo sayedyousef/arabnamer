@@ -22,7 +22,7 @@ arabnamer does three things, offline, in Python:
 ✅ Retrain on your own corpus — training scripts included
 
 Numbers that matter:
-• 98.4 average lenient accuracy on a 25-name MENA benchmark
+• 98.0 average lenient accuracy on a 25-name benchmark
 • 22,798 EN-AR name pairs in the training dictionary
 • 40 MB pip install, fully offline after install, no API keys
 
@@ -71,7 +71,7 @@ smallest identical XGBoost): link in comments.
 arabnamer 0.1 is live on PyPI 🚀
 
 English → Arabic name transliteration + fuzzy similarity, offline, 40 MB, one
-Python call. 98.4% accuracy on a MENA benchmark. Training data (22K names) and
+Python call. 98.0% accuracy on a benchmark. Training data (22K names) and
 XGBoost model included. MIT + CC-BY-4.0.
 
 → pip install arabnamer
