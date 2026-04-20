@@ -1,0 +1,103 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "arabnamer"
+version = "0.1.0"
+description = "Arabic name transliteration and similarity — convert English names to Arabic (and score Arabic name matches) with a gradient-boosted model trained on 22 K name pairs."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Elsayed Yousef", email = "elsayed.yousef@gmail.com" },
+]
+maintainers = [
+    { name = "Elsayed Yousef", email = "elsayed.yousef@gmail.com" },
+]
+keywords = [
+    "arabic",
+    "transliteration",
+    "arabic-nlp",
+    "mena",
+    "name-matching",
+    "name-normalization",
+    "fuzzy-matching",
+    "xgboost",
+    "kyc",
+    "entity-resolution",
+    "arabic-names",
+    "romanization",
+    "rapidfuzz",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Natural Language :: Arabic",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+    "Typing :: Typed",
+]
+dependencies = [
+    "xgboost>=2.0",
+    "numpy>=1.24",
+    "rapidfuzz>=3.0",
+]
+
+[project.optional-dependencies]
+hf = ["huggingface-hub>=0.20"]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.0",
+    "ruff>=0.6",
+    "build>=1.0",
+    "twine>=5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/sayedyousef/arabnamer"
+Documentation = "https://github.com/sayedyousef/arabnamer#readme"
+Repository = "https://github.com/sayedyousef/arabnamer"
+Issues = "https://github.com/sayedyousef/arabnamer/issues"
+Changelog = "https://github.com/sayedyousef/arabnamer/blob/main/CHANGELOG.md"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/arabnamer"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"model/xgb_pruned_386r.ubj.gz" = "arabnamer/data/xgb_pruned_386r.ubj.gz"
+"model/labels.json" = "arabnamer/data/labels.json"
+"dataset/dict_FINAL.json" = "arabnamer/data/dict_FINAL.json"
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "src/arabnamer",
+    "model/*.gz",
+    "model/labels.json",
+    "dataset/dict_FINAL.json",
+    "tests",
+    "README.md",
+    "LICENSE",
+    "LICENSE-DATA",
+    "pyproject.toml",
+]
+
+[tool.ruff]
+target-version = "py39"
+line-length = 100
+
+[tool.ruff.lint]
+extend-select = ["I", "UP", "B", "SIM", "RUF"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
