@@ -1,0 +1,26 @@
+﻿name_en,reference_ar,predicted_ar,score,passed,engine,source,category
+Sayed Ali,سيد علي,سيد علي,100.0,True,xgboost,di,person
+Mohammed Ali,محمد علي,محمد علي,100.0,True,xgboost,di,person
+Muhammad Ali,محمد علي,محمد علي,100.0,True,xgboost,di,person
+Ahmad Hassan,أحمد حسن,أحمد حسن,100.0,True,xgboost,di,person
+Marwa Farag,مروة فرج,مروة فرج,100.0,True,xgboost,di,person
+Bassel Salloukh,باسل صلوخ,باسل صلوخ,100.0,True,xgboost,di,person
+Nael Jebril,نائل جبريل,نايل جبريل,90.0,True,xgboost,di,person
+Ayman El Desouky,أيمن الدسوقي,أيمن الدسوقي,100.0,True,xgboost,di,person
+Issam Nassar,عصام نصار,عصام نصار,100.0,True,xgboost,di,person
+Elizabeth Kassab,إليزابيث قصاب,إليزابيث قصاب,100.0,True,xgboost,di,person
+Natalie Tayim,ناتالي تيم,ناتالي تيم,100.0,True,xgboost,di,person
+Ismail Nashef,إسماعيل ناشف,إسماعيل ناشف,100.0,True,xgboost,di,person
+Ayhab Saad,إيهاب سعد,اهاب سعد,94.1,True,xgboost,di,person
+Julia Barbar,جوليا بربر,جوليا باربر,95.2,True,xgboost,di,person
+Rabia Naguib,ربيعة نجيب,ربيعة نجيب,100.0,True,xgboost,di,person
+Hosam Haffz,حسام حافظ,حسام حافظ,100.0,True,xgboost,di,person
+Diala Hawi,ديالا حاوي,ديالا حاوي,100.0,True,xgboost,di,person
+Mahdi Arar,مهدي عرعر,مهدي عرعر,100.0,True,xgboost,di,person
+Adham Saouli,أدهم ساولي,أدهم ساولي,100.0,True,xgboost,di,person
+Tariq Da'na,طارق دعنا,طارق دعنا,100.0,True,xgboost,di,person
+Ferdoos Alissa,فردوس العيسى,فردوس العيسى,100.0,True,xgboost,di,person
+Moataz El Fegiry,معتز الفجيري,معتز الفجيري,100.0,True,xgboost,di,person
+Elias Khalil,الياس خليل,إلياس خليل,100.0,True,xgboost,di,person
+Basim Tweissi,باسم الطويسي,باسم تويسي,81.8,False,xgboost,di,person
+Abdennour Benantar,عبد النور بن عنتر,عبد النور بن عنتر,100.0,True,xgboost,di,person
