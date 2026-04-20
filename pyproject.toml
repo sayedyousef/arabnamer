@@ -4,8 +4,8 @@ build-backend = "hatchling.build"
 
 [project]
 name = "arabnamer"
-version = "0.1.0"
-description = "Arabic name transliteration and similarity — convert English names to Arabic (and score Arabic name matches) with a gradient-boosted model trained on 22 K name pairs."
+version = "0.1.1"
+description = "Offline Arabic name transliteration and similarity — no LLM, no API calls, no network. Convert English names to Arabic and match Arabic name variants (hamza, tashkeel, taa-marbuta) 100% on your own machine. Built for KYC, compliance, and any workflow where names must never leave your infrastructure."
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }

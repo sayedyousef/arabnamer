@@ -6,7 +6,7 @@
 [![Dataset License: CC-BY-4.0](https://img.shields.io/badge/dataset-CC--BY--4.0-orange.svg)](LICENSE-DATA)
 [![Downloads](https://static.pepy.tech/badge/arabnamer/month)](https://pepy.tech/project/arabnamer)
 
-**Convert English names to Arabic and score Arabic name matches — offline, in one line of Python.**
+**Offline Arabic name transliteration and similarity — no LLM, no API calls, no network.**
 
 ```python
 from arabnamer import translit, similarity
@@ -17,13 +17,35 @@ translit("Ayman El Desouky").arabic    # → 'أيمن الدسوقي'
 similarity("أحمد حسن", "احمد حسن")      # → (True, 100)
 ```
 
-`arabnamer` solves the **Arabic name transliteration** problem — turning `Mohammed Ali` into `محمد علي`,
-and scoring matches between Arabic name variants (with hamza, tashkeel, taa-marbuta differences).
-It ships a 38 MB pruned XGBoost model trained on **22,798 English-Arabic name pairs** (JRC-Names + Google
-Translate + manual audit) and reaches **98.4 % lenient accuracy** on an independent MENA-names benchmark.
+## Why offline matters
 
-Built for: KYC / sanctions screening, library cataloguing, Arabic NLP preprocessing, search-relevance
-normalization, entity resolution across English and Arabic corpora.
+Names are personal data. Shipping them to Google Translate, OpenAI, Claude, or any cloud
+API means exposing PII to a third party — a hard compliance problem for finance, legal,
+healthcare, government, and MENA-region institutions bound by data-residency laws.
+
+`arabnamer` solves both major Arabic-name problems on your own machine:
+
+1. **Transliteration** — `Mohammed Ali` → `محمد علي` (the tricky ones: hamza variants,
+   compound articles like `El`/`Al`/`Abd`, silent vowels, dialect spellings)
+2. **Matching** — `أحمد حسن` ≡ `احمد حسن` ≡ `أحمد حسن` (scoring insensitive to hamza,
+   tashkeel, taa-marbuta, and alef-maksura variants)
+
+No model server, no internet, no API key, no request logs. Install once via `pip`,
+run anywhere — including air-gapped environments. The 38 MB pruned XGBoost model and
+22,798-pair dictionary are bundled inside the wheel.
+
+| | Cloud APIs (Google, OpenAI, Claude) | `arabnamer` |
+|---|---|---|
+| Network required | ✅ yes | ❌ no — 100% offline |
+| Names leave your infrastructure | ✅ yes | ❌ no |
+| Per-call cost | metered | zero |
+| Works in air-gapped / on-prem | ❌ no | ✅ yes |
+| Model audit / replacement | ❌ opaque | ✅ open weights + retrainable |
+| Accuracy (25-name MENA benchmark) | varies by model | **98.4 avg, 24/25 pass ≥ 90** |
+
+Built for: **KYC / sanctions screening**, **compliance-gated entity resolution**,
+**library & archive cataloguing**, **Arabic NLP preprocessing**, **on-premise search
+relevance** — any workflow where names must never leave your infrastructure.
 
 ---
 

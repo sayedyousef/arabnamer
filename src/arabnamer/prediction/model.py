@@ -79,6 +79,16 @@ def _resolve_file(
                 return p
             raise FileNotFoundError(f"{env_var}={env_val} not found")
 
+    # 1. Installed wheel: arabnamer/data/<filename>
+    try:
+        from importlib import resources
+        r = resources.files("arabnamer").joinpath("data", filename)
+        if r.is_file():
+            return Path(str(r))
+    except Exception:
+        pass
+
+    # 2. Dev/editable repo: <repo_root>/<subdir>/<filename>
     local = _find_local_file(filename, subdir=subdir)
     if local is not None:
         return local

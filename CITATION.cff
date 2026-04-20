@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: "If you use arabnamer in your research or product, please cite it as below."
+title: "arabnamer: Arabic name transliteration and similarity"
+abstract: >
+  arabnamer is a Python library for English-to-Arabic name transliteration and
+  Arabic-to-Arabic fuzzy name similarity. It bundles an XGBoost model pruned to
+  386 boosting rounds (38 MB gzipped) trained on 22,798 English-Arabic name
+  pairs sourced from JRC-Names, Google Translate, LLM fill-in, and manual
+  audit. Lenient-scoring accuracy is 98.4 on a 25-name MENA benchmark.
+authors:
+  - family-names: Yousef
+    given-names: Elsayed
+    email: elsayed.yousef@gmail.com
+version: 0.1.0
+date-released: 2026-04-20
+license: MIT
+license-url: "https://github.com/sayedyousef/arabnamer/blob/main/LICENSE"
+repository-code: "https://github.com/sayedyousef/arabnamer"
+url: "https://github.com/sayedyousef/arabnamer"
+keywords:
+  - arabic
+  - transliteration
+  - arabic-nlp
+  - name-matching
+  - fuzzy-matching
+  - xgboost
+  - mena
+  - entity-resolution
+  - kyc
+preferred-citation:
+  type: software
+  title: "arabnamer: Arabic name transliteration and similarity"
+  authors:
+    - family-names: Yousef
+      given-names: Elsayed
+  version: 0.1.0
+  year: 2026
+  url: "https://github.com/sayedyousef/arabnamer"
