@@ -16,7 +16,7 @@ tags:
   - mena
   - kyc
   - entity-resolution
-short_description: Offline English ↔ Arabic name transliteration & fuzzy similarity.
+short_description: Offline Arabic name transliteration & fuzzy similarity.
 ---
 
 # arabnamer — live demo
